@@ -29,4 +29,36 @@ class ProblemsOneThroughTen {
         }
         return total
     }
+
+    fun largestPrimeFactor(value: Long): Long {
+        return primeFactors(value).last()
+    }
+
+    private fun primeFactors(value: Long): List<Long> {
+        var factors = HashSet<Long>()
+        val max = Math.sqrt(value.toDouble()).toLong()
+
+        for (factor in 2..max) {
+            if (value % factor == 0.toLong() && isPrime(factor)) {
+                factors.add(factor)
+                val otherFactor = value / factor
+                if (isPrime(otherFactor)) {
+                    factors.add(otherFactor)
+                }
+            }
+        }
+        return factors.sorted()
+    }
+
+    private fun isPrime(value: Long): Boolean {
+        val max = Math.sqrt(value.toDouble()).toLong()
+        for (factor in 2..max) {
+            if (value % factor == 0.toLong()) {
+                return false
+            }
+        }
+        return true
+
+    }
+
 }

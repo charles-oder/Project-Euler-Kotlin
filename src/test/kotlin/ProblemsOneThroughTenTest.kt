@@ -2,7 +2,6 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import org.junit.Before
-import java.sql.Time
 
 class ProblemsOneThroughTenTest {
 
@@ -34,6 +33,19 @@ class ProblemsOneThroughTenTest {
         timer.start()
 
         val actualSolution = solver.evenFibonacciNumbers()
+
+        timer.stop()
+
+        assertEquals(expectedSolution, actualSolution)
+    }
+
+    // Problem ID 3
+    @Test
+    fun largestPrimeFactor() {
+        val expectedSolution = 6857.toLong()
+        timer.start()
+
+        val actualSolution = solver.largestPrimeFactor(600851475143)
 
         timer.stop()
 
