@@ -123,4 +123,16 @@ class ProblemsOneThroughTen {
         return output * output
     }
 
+    fun nthPrime(n: Int): Long {
+        var current: Long = 1
+        var primeCount: Int = 0
+        while (primeCount < n) {
+            current += 1
+            if (isPrime(current)) {
+                primeCount += 1
+            }
+        }
+        return current
+    }
+
 }

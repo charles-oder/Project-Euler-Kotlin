@@ -99,4 +99,19 @@ class ProblemsOneThroughTenTest {
 
     }
 
+    // Problem ID 7
+    @Test
+    fun oneThousandAndFirstPrime() {
+        val expectedSolution: Long = 104743
+
+        var actualValue: Long = 0
+        timer.performTimedTask(10, {
+            actualValue = solver.nthPrime(10001)
+        })
+
+
+        assertEquals(expectedSolution, actualValue)
+
+    }
+
 }
