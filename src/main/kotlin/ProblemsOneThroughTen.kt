@@ -80,4 +80,23 @@ class ProblemsOneThroughTen {
         return stringValue == reverseValue
     }
 
+    fun smallestMultiple(): Long {
+        var value: Long = 20
+
+        while (!isDivisibleByAllInRange(value,1..20)) {
+            value += 20
+        }
+
+        return value
+    }
+
+    private fun isDivisibleByAllInRange(value: Long, range: IntRange): Boolean {
+        for (n in range) {
+            if (value % n.toLong() != 0.toLong()) {
+                return false
+            }
+        }
+        return true
+    }
+
 }

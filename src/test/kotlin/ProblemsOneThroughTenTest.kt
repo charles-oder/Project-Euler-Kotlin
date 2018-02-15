@@ -69,5 +69,19 @@ class ProblemsOneThroughTenTest {
         assertEquals(expectedSolution, actualValue)
     }
 
+    // Problem ID 5
+    @Test
+    fun smallestMultiple() {
+        val expectedSolution: Long = 232792560
+
+        var actualValue: Long = 0
+        timer.performTimedTask(10, {
+            actualValue = solver.smallestMultiple()
+        })
+
+
+        assertEquals(expectedSolution, actualValue)
+
+    }
 
 }
