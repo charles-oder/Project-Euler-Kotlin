@@ -14,4 +14,18 @@ public class ProcessTimer {
 
         return milisecondsValue
     }
+
+    fun performTimedTask(iterations: Int, block: () -> Unit) {
+        start()
+        for (i in 1..iterations) {
+            block()
+        }
+        val time = stop()
+        val timePerIteration = time / iterations.toDouble()
+
+        val millisecondString = String.format("%.6f", timePerIteration)
+        println("$iterations iterations took $time ms")
+        println("Process took an average of $millisecondString ms")
+
+    }
 }

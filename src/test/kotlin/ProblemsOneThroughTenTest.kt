@@ -19,7 +19,7 @@ class ProblemsOneThroughTenTest {
         val expectedSolution = 233168
 
         var actualValue = 0
-        performTimedTask(10, {
+        timer.performTimedTask(10, {
             actualValue = solver.multiplesOf3And5()
         })
 
@@ -33,7 +33,7 @@ class ProblemsOneThroughTenTest {
         val expectedSolution = 4613732
 
         var actualValue = 0
-        performTimedTask(10, {
+        timer.performTimedTask(10, {
             actualValue = solver.evenFibonacciNumbers()
         })
 
@@ -47,7 +47,7 @@ class ProblemsOneThroughTenTest {
         val expectedSolution = 6857.toLong()
 
         var actualValue: Long = 0
-        performTimedTask(10, {
+        timer.performTimedTask(10, {
             actualValue = solver.largestPrimeFactor(600851475143)
         })
 
@@ -61,7 +61,7 @@ class ProblemsOneThroughTenTest {
         val expectedSolution: Long = 906609
 
         var actualValue: Long = 0
-        performTimedTask(10, {
+        timer.performTimedTask(10, {
             actualValue = solver.largestPalindromeProduct()
         })
 
@@ -69,18 +69,5 @@ class ProblemsOneThroughTenTest {
         assertEquals(expectedSolution, actualValue)
     }
 
-    fun performTimedTask(iterations: Int, block: () -> Unit) {
-        timer.start()
-        for (i in 1..iterations) {
-            block()
-        }
-        val time = timer.stop()
-        val timePerIteration = time / iterations.toDouble()
-
-        val millisecondString = String.format("%.6f", timePerIteration)
-        println("$iterations iterations took $time ms")
-        println("Process took an average of $millisecondString ms")
-
-    }
 
 }
