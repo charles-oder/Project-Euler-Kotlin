@@ -67,9 +67,7 @@ class ProblemsOneThroughTen {
             for (b in 1..999) {
                 val product: Long = a.toLong() * b.toLong()
                 if (isPalindrome(product)) {
-                    if (product > largestPalindrome) {
-                        largestPalindrome = product
-                    }
+                    largestPalindrome = maxOf(product, largestPalindrome)
                 }
             }
         }
