@@ -99,4 +99,28 @@ class ProblemsOneThroughTen {
         return true
     }
 
+    fun sumSquareDifference(numberCount: Int): Long {
+        return squareOfSum(numberCount) - sumOfSquares(numberCount)
+    }
+
+    private fun sumOfSquares(numberCount: Int): Long {
+        var output: Long = 0
+
+        for (n in 1..numberCount) {
+            output += n * n
+        }
+
+        return output
+    }
+
+    private fun squareOfSum(numberCount: Int): Long {
+        var output: Long = 0
+
+        for (n in 1..numberCount) {
+            output += n
+        }
+
+        return output * output
+    }
+
 }

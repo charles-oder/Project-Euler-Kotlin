@@ -84,4 +84,19 @@ class ProblemsOneThroughTenTest {
 
     }
 
+    // Problem ID 6
+    @Test
+    fun sumSquareDifference() {
+        val expectedSolution: Long = 25164150
+
+        var actualValue: Long = 0
+        timer.performTimedTask(10, {
+            actualValue = solver.sumSquareDifference(100)
+        })
+
+
+        assertEquals(expectedSolution, actualValue)
+
+    }
+
 }
