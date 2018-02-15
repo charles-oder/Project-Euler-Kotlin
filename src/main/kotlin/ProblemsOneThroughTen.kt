@@ -61,4 +61,25 @@ class ProblemsOneThroughTen {
 
     }
 
+    fun largestPalindromeProduct(): Long {
+        var largestPalindrome: Long = 0
+        for (a in 1..999) {
+            for (b in 1..999) {
+                val product: Long = a.toLong() * b.toLong()
+                if (isPalindrome(product)) {
+                    if (product > largestPalindrome) {
+                        largestPalindrome = product
+                    }
+                }
+            }
+        }
+        return largestPalindrome
+    }
+
+    private fun isPalindrome(value: Long): Boolean {
+        val stringValue = value.toString()
+        val reverseValue = stringValue.reversed()
+        return stringValue == reverseValue
+    }
+
 }

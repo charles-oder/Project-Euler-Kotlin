@@ -52,4 +52,17 @@ class ProblemsOneThroughTenTest {
         assertEquals(expectedSolution, actualSolution)
     }
 
+    // Problem ID 4
+    @Test
+    fun largestPalindromeProduct() {
+        val expectedSolution: Long = 906609
+        timer.start()
+
+        val actualValue = solver.largestPalindromeProduct()
+
+        timer.stop()
+
+        assertEquals(expectedSolution, actualValue)
+    }
+
 }
