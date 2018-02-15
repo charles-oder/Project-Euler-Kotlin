@@ -135,4 +135,23 @@ class ProblemsOneThroughTen {
         return current
     }
 
+    fun largestSeriesProduct(count: Int, series: String): Long {
+        var max: Long = 0
+
+        for (start in 0..(series.count() - count - 1)) {
+            var currentTotal: Long = 1
+            for (index in start..(start + count - 1)) {
+                val character = series[index]
+                val number = "$character".toLong()
+                currentTotal *= number.toLong()
+            }
+            if (currentTotal > max) {
+                max = currentTotal
+            }
+        }
+
+        return max
+    }
+
+
 }
