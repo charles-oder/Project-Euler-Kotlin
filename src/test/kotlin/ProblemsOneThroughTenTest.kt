@@ -164,6 +164,34 @@ class ProblemsOneThroughTenTest {
 
     }
 
+    // Problem ID 10
+    @Test
+    fun summationOfPrimes() {
+        val expectedSolution: Long = 142913828922
+
+        var actualValue: Long = 0
+        timer.performTimedTask(10, {
+            actualValue = solver.summationOfPrimes(2000000)
+        })
+
+        assertEquals(expectedSolution, actualValue)
+
+    }
+
+    // Problem ID 10 alternate solution
+    @Test
+    fun summationOfPrimesUsingBruteForce() {
+        val expectedSolution: Long = 142913828922
+
+        var actualValue: Long = 0
+        timer.performTimedTask(10, {
+            actualValue = solver.summationOfPrimesBruteForce(2000000)
+        })
+
+        assertEquals(expectedSolution, actualValue)
+
+    }
+
 
 
 }

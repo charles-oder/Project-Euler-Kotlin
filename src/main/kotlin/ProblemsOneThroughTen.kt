@@ -172,5 +172,44 @@ class ProblemsOneThroughTen {
         return (a * a) + (b * b) == (c * c)
     }
 
+    fun summationOfPrimes(cap: Int): Long {
+        val primes = sieveOfEratosthenes(cap)
+        return primes.sum()
+    }
+
+    fun summationOfPrimesBruteForce(cap: Int): Long {
+        val primes = bruteForcePrimeHunt(cap)
+        return primes.sum()
+    }
+
+    private fun bruteForcePrimeHunt(cap: Int): List<Long> {
+        var primes = MutableList(0, {i -> 0.toLong()})
+        for (i in 2..cap) {
+            if (isPrime(i.toLong())) {
+                primes.add(i.toLong())
+            }
+        }
+        return primes
+    }
+
+    private fun sieveOfEratosthenes(cap: Int): List<Long> {
+        var primes = MutableList(0, {i -> 0.toLong()})
+        var list = MutableList(cap + 1, {i -> true})
+        list[0] = false
+        list[1] = false
+        for (i in list.indices) {
+            if (list[i]) {
+                primes.add(i.toLong())
+                var j = i
+                while (j < list.count()) {
+                    list[j] = false
+                    j += i
+                }
+            }
+        }
+
+        return primes
+    }
+
 
 }
