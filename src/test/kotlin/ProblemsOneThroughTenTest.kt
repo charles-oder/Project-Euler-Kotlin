@@ -149,4 +149,21 @@ class ProblemsOneThroughTenTest {
 
     }
 
+    // Problem ID 9
+    @Test
+    fun specialPythagoreanTriplet() {
+        val expectedSolution: Long = 31875000
+
+        var actualValue: Long = 0
+        timer.performTimedTask(10, {
+            actualValue = solver.specialPythagoreanTriplet(1000)
+        })
+
+
+        assertEquals(expectedSolution, actualValue)
+
+    }
+
+
+
 }

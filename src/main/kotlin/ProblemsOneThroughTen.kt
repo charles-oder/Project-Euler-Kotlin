@@ -153,5 +153,24 @@ class ProblemsOneThroughTen {
         return max
     }
 
+    fun specialPythagoreanTriplet(sum: Int): Long {
+
+        for (a in 1..sum) {
+            for (b in 1..(sum - a)) {
+                val c = sum - a - b
+                if (isPythagoreanTriplet(a, b, c)) {
+                    return a.toLong() * b.toLong() * c.toLong()
+                }
+            }
+        }
+
+        return 0
+
+    }
+
+    private fun isPythagoreanTriplet(a: Int, b: Int, c: Int): Boolean {
+        return (a * a) + (b * b) == (c * c)
+    }
+
 
 }
