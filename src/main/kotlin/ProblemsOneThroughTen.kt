@@ -143,7 +143,7 @@ class ProblemsOneThroughTen {
             for (index in start..(start + count - 1)) {
                 val character = series[index]
                 val number = "$character".toLong()
-                currentTotal *= number.toLong()
+                currentTotal *= number
             }
             if (currentTotal > max) {
                 max = currentTotal
